@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color1: #1693a5;
+    --color2: #45b5c4;
+    --color3: #7ececa;
+    --color4: #a0ded6;
+    --color5: #c7ede8;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+header {
+    min-height: 65px;
+    padding: 10px;
+    border-bottom: 1.5px solid var(--color1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 6vw;
+    border-radius: 50%;
+    min-width: 60px;
+    max-width: 80px;
+    animation: heartbeatEffect 1s infinite alternate;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+}
+
+header nav ul li a {
+    padding: 15px 30px;
+    border-radius: 3px 12px;
+    display: inline-block;
+    background-color: var(--color1);
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 10px 3px var(--color1);
+    background-color: white;
+    color: var(--color1);
+    transition: all 0.3s ease-in-out;
+    animation: heartbeatEffect 1s infinite alternate;
+}
+
+.container-slides {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    animation: slideAnimation 15s infinite;
+}
+
+.slide {
+    width: 100%;
+    position: relative;
+}
+
+.slide img {
+    image-rendering: optimizeSpeed;
+    image-resolution: from-image 120dpi;
+    width: 100vw;
+    height: 80vh;
+    object-fit: cover;
+}
+
+.caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px 20px;
+}
+
+@keyframes slideAnimation {
+    0% {
+        margin-left: 0;
+    }
+
+    10% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: -100%;
+    }
+
+    30% {
+        margin-left: -100%;
+    }
+
+    40% {
+        margin-left: -200%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    60% {
+        margin-left: -300%;
+    }
+
+    70% {
+        margin-left: -300%;
+    }
+
+    80% {
+        margin-left: -400%;
+    }
+
+    90% {
+        margin-left: -400%;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+
+    /* Regreso al inicio */
+}
+
+@keyframes heartbeatEffect {
+    from {
+        box-shadow: none;
+    }
+
+    to {
+        box-shadow: 0px 0px 10px 3px var(--color1);
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .logo {
+        flex-direction: column;
+    }
+
+    .logo img {
+        width: 20vw;
+        max-width: none;
+        order: 1;
+    }
+}
