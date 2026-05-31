@@ -197,7 +197,7 @@ header nav {
         display: inline-block;
     }
 
-    header nav ul {
+    .box-btn {
         width: auto;
         flex-direction: row;
     }
