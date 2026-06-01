@@ -186,9 +186,49 @@ header nav {
     grid-template-columns: repeat(3, minmax(45px, 1fr));
 }
 
-.mosaico-adopcion img{
-    max-width: 100%; 
-    height: 100%; 
+.mosaico-adopcion img {
+    max-width: 100%;
+    height: 100%;
+}
+
+/* Catalogo animales */
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.tarjeta-animal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: lightcyan;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 1s;
+}
+
+.tarjeta-animal:hover {
+    transform: scale(1.05);
+    animation: heartbeatEffect 1s infinite alternate;
+}
+
+.tarjeta-animal img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tarjeta-animal .estado {
+    width: fit-content;
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    font-weight: 600;
+    border-radius: 5px;
 }
 
 footer {
@@ -305,6 +345,16 @@ footer a {
 
     .mision-vision {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    
+
+    .tarjeta-animal {
+    }
+
+    .tarjeta-animal img {
+        width: 30%;
+        border-radius: 10px;
     }
 
 }
