@@ -217,18 +217,72 @@ header nav {
 }
 
 .tarjeta-animal img {
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
     border-radius: 10px;
 }
 
 .tarjeta-animal .estado {
     width: fit-content;
-    background-color: green;
     color: white;
     padding: 10px 15px;
     font-weight: 600;
     border-radius: 5px;
+}
+
+span.estado[data-status]{
+    background-color: gray;
+}
+
+span.estado[data-status="adoptado"]  {
+    background-color: red;
+}
+
+span.estado[data-status="disponible"] {
+    background-color: green;
+}
+
+
+.section-title {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.perfil-animal {
+    display: flex;
+    font-size: 1.1rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 60px;
+    gap: 25px;
+}
+
+.perfil-animal .detalles {
+    text-align: center;
+}
+
+.perfil-animal div {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: lightcyan;
+}
+
+.perfil-animal img {
+    width: 50vw;
+    max-width: 320px;
+    border-radius:  50%;
+    transition: transform 1s;
+    animation: heartbeatEffect 1s infinite alternate;
+}
+
+.perfil-animal img:hover{
+    transform: scale(1.05);
+}
+
+.perfil-animal h3 {
+    padding: 5px 0;
+    text-align: center;
 }
 
 footer {
@@ -347,16 +401,10 @@ footer a {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    
-
-    .tarjeta-animal {
+    .perfil-animal {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
-
-    .tarjeta-animal img {
-        width: 30%;
-        border-radius: 10px;
-    }
-
 }
 
 /* Pantallas grandes */
