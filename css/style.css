@@ -302,7 +302,8 @@ span.estado[data-status="disponible"] {
 input,
 select,
 textarea {
-    width: 100%; /* ← esto es crítico */
+    width: 100%;
+    /* ← esto es crítico */
     box-sizing: border-box;
     padding: 8px;
     border: 1px solid #ccc;
@@ -354,6 +355,134 @@ textarea:invalid {
     text-decoration: none;
     color: black;
     font-weight: 600;
+}
+
+/* Implementacion examen */
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: var(--color5);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.panel-metricas {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr);
+    padding: 20px;
+    gap: 20px;
+}
+
+.metrica {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    gap: 10px;
+    background-color: var(--color3);
+    transition: all 1s;
+}
+
+.metrica:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2px 5px var(--color5);
+}
+
+.metrica :is(h3, span, label, p) {
+    background-color: var(--color5);
+}
+
+.metrica :is(h3, span, label) {
+    transition: all 0.5s;
+    border-radius: 5px;
+    padding: 10px 5px;
+}
+
+.metrica :is(h3, span, label):hover {
+    background-color: var(--color2);
+}
+
+.metrica .cifra {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.footnote {
+    font-size: 0.8rem;
+    text-align: right;
+    padding: 2px;
+    font-weight: bold;
+}
+
+.container-grafico {
+    padding: 10px;
+    background-color: var(--color5);
+}
+
+.values {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 10px;
+}
+
+.values span{
+    background-color: #2ecc71;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-wrap: nowrap;
+}
+
+.porcentaje {
+    position: relative;
+    z-index: 1;
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.narrativa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.narrativa p {
+    font-size: 1.1rem;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-action {
+    max-width: fit-content;
+    border-radius: 5px;
+    background-color: var(--color2);
+    font-weight: 600;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+}
+
+.w-12 {
+    width: 12.5%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-50 {
+    width: 50%;
 }
 
 footer {
@@ -476,6 +605,10 @@ footer a {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
+
+    .panel-metricas {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
 }
 
 /* Pantallas grandes */
@@ -491,5 +624,9 @@ footer a {
 
     .testimonios {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .panel-metricas {
+        grid-template-columns: repeat(4, minmax(220px, 1fr));
     }
 }
